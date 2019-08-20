@@ -15,6 +15,4 @@ test 2
 214
 142
 
->>>>>>> feature1
-
-add merge
+add a ge merge
