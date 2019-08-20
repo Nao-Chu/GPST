@@ -7,3 +7,6 @@ Creating a new branch is quick
 Creating a new branch is quick AND
 1
 >>>
+
+test 2
+
