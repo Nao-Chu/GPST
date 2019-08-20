@@ -18,3 +18,4 @@ test 2
 >>>>>>> feature1
 
 add merge
+bug --000
