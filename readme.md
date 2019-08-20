@@ -9,4 +9,10 @@ Creating a new branch is quick AND
 >>>
 
 test 2
-11
+<<<<<<< HEAD
+
+123
+214
+142
+
+>>>>>>> feature1
