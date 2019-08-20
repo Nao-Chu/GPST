@@ -15,6 +15,9 @@ test 2
 214
 142
 
+<<<<<<< HEAD
 >>>>>>> feature1
 
+=======
+>>>>>>> dev
 add a ge merge
