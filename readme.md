@@ -17,4 +17,4 @@ test 2
 
 >>>>>>> feature1
 
-add merge
+add a merge
