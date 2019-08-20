@@ -16,3 +16,5 @@ test 2
 142
 
 >>>>>>> feature1
+
+add merge
