@@ -78,6 +78,7 @@
   3.提交：git commit -m "注释"
   4.回到主分支然后合并：git merge --no-ff -m "注释" name
   5.上传到远程库：git push 
+  6.如果git push失败，那就git pull下来，更改冲突，然后重新git push
   ```
 
 * 远程添加Key问题
