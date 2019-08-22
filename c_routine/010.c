@@ -1,39 +1,44 @@
 #include <stdio.h>
 
-void ShellSort(int a[],int length)
+void FastSort(int *a,int low,int high)
 {
-	int increment;
-	int i,j;
-	int temp;
-	int count = 0;
-	for(increment = length * 0.5; increment > 0;increment *= 0.5){
-		for (i = increment; i < length;i++){
-			temp = a[i];
-			for (j = i - increment;j >= 0 && temp < a[j];j -= increment){
-				a[j + increment] = a[j];
+	if (low < high){
+		int i = low;
+		int j = high;
+		int k = a[low];
+		while(i < j){
+			while(i < j && a[j] >= k){
+				j--;
 			}
-			a[j + increment] = temp;
-			printf("%d: ",++count);
-			for(int i = 0;i < 10;i++){
-					printf("%d ",a[i]);
+			if (i < j){
+				a[i++] = a[j];
 			}
-			printf("\n");
+
+			while(i < j && a[i] < k){
+				i++;
+			}
+			if (i < j){
+				a[j--] = a[i];
+			}
 		}
-		printf("\n");
+		a[i] = k;
+		FastSort(a,low,i - 1);
+		FastSort(a,i + 1,high);
 	}
+}
+
+void Print(int a[])
+{
+	for(int i = 0;i < 10;i++){
+			printf("%d ",a[i]);
+	}
+	printf("\n");
 }
 int main()
 {
 	int a[] = {50,10,44,24,15,11,17,32,78,41};
-	printf("   ");
-	for(int i = 0;i < 10;i++){
-			printf("%d ",a[i]);
-	}
-	printf("\n");
-	ShellSort(a,10);
-	for(int i = 0;i < 10;i++){
-			printf("%d ",a[i]);
-	}
-	printf("\n");
+	Print(a);
+	FastSort(a,0,9);
+	Print(a);
 	return 0;
 }
