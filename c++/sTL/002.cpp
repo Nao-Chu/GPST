@@ -24,8 +24,28 @@ void test01(){
 	}
 
 }
+
+void test02(){
+	map<int,int> map_02;
+	map_02[10] = 1;
+	map_02[20] = 2;
+	map_02[30] = 3;
+	if (map_02.count(30)){
+		cout << "have count" << endl;
+	}
+	else
+		cout << "No count" << endl;
+
+	if (map_02.count(3)){
+		cout << "have count" << endl;
+	}
+	else
+		cout << "No count" << endl;
+}
+
 int main(int argc,char** argv)
 {
-	test01();
+	//test01();
+	test02();
 	return 0;
 }
