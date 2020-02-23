@@ -20,6 +20,8 @@ void findcount(char *mstr,int *count,const char *findstr)
 	const char *tarstr;
 	char swap;
 	int number = 0;
+	if (mstr == NULL || findstr == NULL || count == NULL)
+		return;
 	p = mstr;
 	tarstr = findstr;
 	do
