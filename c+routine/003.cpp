@@ -30,7 +30,7 @@ int main()
 
 	*p = 20;
 
-	cout << a.i << endl;
+	cout << a.i << " " << *p << endl;
 
 	p = (int*)&b;
 
