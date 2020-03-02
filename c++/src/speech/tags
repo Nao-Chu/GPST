@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+GenSpeaker	main.cpp	/^int GenSpeaker(map<int,Speaker> &mapSpeaker,vector<int> v1)$/;"	f	signature:(map<int,Speaker> &mapSpeaker,vector<int> v1)
+GenSpeaker	main.cpp	/^int GenSpeaker(map<int,Speaker> &mapSpeaker,vector<int> v1);$/;"	p	file:	signature:(map<int,Speaker> &mapSpeaker,vector<int> v1)
+Speaker	speaker.h	/^class Speaker$/;"	c
+Speaker::m_name	speaker.h	/^	string m_name;$/;"	m	class:Speaker	access:public
+Speaker::m_score	speaker.h	/^	int	   m_score[3];$/;"	m	class:Speaker	access:public
+cpp	Makefile	/^cpp = g++$/;"	m
+deps	Makefile	/^deps = $(shell find .\/ -name "*.h")$/;"	m
+m_name	speaker.h	/^	string m_name;$/;"	m	class:Speaker	access:public
+m_score	speaker.h	/^	int	   m_score[3];$/;"	m	class:Speaker	access:public
+main	main.cpp	/^int main()$/;"	f	signature:()
+mapSpeaker	main.cpp	/^	map<int,Speaker> mapSpeaker;$/;"	l
+obj	Makefile	/^obj = $(src:%.cpp=%.o)$/;"	m
+prom	Makefile	/^prom = main$/;"	m
+speech_contest	main.cpp	/^int speech_contest(int i,vector<int> &v1,map<int,Speaker> &mapSpeaker,vector<int> &v2)$/;"	f	signature:(int i,vector<int> &v1,map<int,Speaker> &mapSpeaker,vector<int> &v2)
+speech_contest	main.cpp	/^int speech_contest(int i,vector<int> &v1,map<int,Speaker> &mapSpeaker,vector<int> &v2);$/;"	p	file:	signature:(int i,vector<int> &v1,map<int,Speaker> &mapSpeaker,vector<int> &v2)
+speech_contest_draw	main.cpp	/^int speech_contest_draw(vector<int> &v1)$/;"	f	signature:(vector<int> &v1)
+speech_contest_draw	main.cpp	/^int speech_contest_draw(vector<int> &v1);$/;"	p	file:	signature:(vector<int> &v1)
+speech_contest_print	main.cpp	/^int speech_contest_print(int i,vector<int> &v2,map<int,Speaker> &mapSpeaker)$/;"	f	signature:(int i,vector<int> &v2,map<int,Speaker> &mapSpeaker)
+speech_contest_print	main.cpp	/^int speech_contest_print(int i,vector<int> &v2,map<int,Speaker> &mapSpeaker);$/;"	p	file:	signature:(int i,vector<int> &v2,map<int,Speaker> &mapSpeaker)
+src	Makefile	/^src = $(shell find .\/ -name "*.cpp")$/;"	m
+v1	main.cpp	/^	vector<int>	v1;$/;"	l
+v2	main.cpp	/^	vector<int>	v2;$/;"	l
+v3	main.cpp	/^	vector<int>	v3;$/;"	l
+v4	main.cpp	/^	vector<int>	v4;$/;"	l
