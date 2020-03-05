@@ -105,7 +105,7 @@ int speech_contest_print(int index,vector<int> &v,map<int,Speaker> &mapSpeaker)
 	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
 	{
 		cout << *it << "\t" << mapSpeaker[*it].m_name << "\t" << mapSpeaker[*it].m_score[index] << endl; 
-		if ((++tmpCount % 3) == 0)
+		if ((++tmpCount % 3) == )
 		{
 			cout << endl;
 		}
