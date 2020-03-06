@@ -9,18 +9,20 @@
 #include<string.h>
 
 typedef void LinkList; 
-typedef void LinkListNode; 
+typedef struct _tag_LinkListNode
+{
+	struct _tag_LinkListNode* next;
+}LinkListNode;
 
 typedef struct _tag_LinkList
 {
+	LinkListNode header;
 	int length;
-	int capacity;
-	unsigned long *node;
 }TLinkList;
 
-LinkList* LinkList_Create(int capacity)
+LinkList* LinkList_Create()
 {
-	TLinkList* tmp;
+	TLinkList* tmp = NULL;
 	tmp = (TLinkList*)malloc(sizeof(TLinkList));
 	if (tmp == NULL)
 	{
@@ -28,20 +30,15 @@ LinkList* LinkList_Create(int capacity)
 	}
 	memset(tmp,0,sizeof(TLinkList));
 
-	tmp->node = (unsigned long *)malloc(sizeof(unsigned long) * capacity);
-	if (tmp->node == NULL)
-	{
-		return NULL;
-	}
-	tmp->capacity = capacity;
 	tmp->length = 0;
+	tmp->header.next=NULL;
 	return tmp;
 }
 
 int LinkList_Insert(LinkList* list,LinkListNode* node,int pos)
 {
-	TLinkList* tlist = NULL;
-	tlist = (TLinkList*)list;
+	LinkListNode* current = NULL;
+	TLinkList* tlist = (TLinkList*)list;
 	int ret = 0;
 	if (tlist == NULL || node == NULL || pos < 0)
 	{
@@ -49,22 +46,14 @@ int LinkList_Insert(LinkList* list,LinkListNode* node,int pos)
 		return ret;
 	}
 
-	if (tlist->length >= tlist->capacity)
-	{
-		ret = -2;
-		return ret;
-	}
+	current = &(tlist->header);
 
-	if (pos >= tlist->capacity)
+	for(int i = 0; i < pos && (current->next!=NULL); i++)
 	{
-		pos = tlist->length;
+		current = current->next;
 	}
-
-	for(int i = tlist->length; i>pos; i--)
-	{
-		tlist->node[i] = tlist->node[i-1];
-	}
-	tlist->node[pos] = (unsigned long)node;
+	node->next = current->next;
+	current->next = node; 
 	tlist->length++;
 	return ret;
 }
@@ -82,47 +71,51 @@ int LinkList_Length(LinkList* list)
 
 LinkListNode* LinkList_Get(LinkList* list,int pos)
 {
+	LinkListNode* current = NULL;
 	TLinkList* tlist = (TLinkList*) list;
-	LinkListNode* tmp = 0;
-	if (tlist == NULL)
+	if (tlist == NULL || pos < 0)
 	{
 		return NULL;
 	}
 
-	if (pos > tlist->length)
+	current = &(tlist->header);
+	for(int i = 0; i < pos && (current->next!=NULL); i++)
 	{
-		return NULL;
+		current = current->next;
 	}
-	tmp = (LinkListNode *)tlist->node[pos];
-	return tmp;
+	return current->next;
 }
 
-int LinkList_Delete(LinkList* list,int pos)
+LinkListNode* LinkList_Delete(LinkList* list,int pos)
 {
+	LinkListNode* current = NULL;
+	LinkListNode* ret = NULL;
 	TLinkList* tlist = NULL;
 	tlist = (TLinkList*) list;
-	int ret = 0;
 	if (tlist == NULL)
 	{
-		ret = -1;
-		return ret;
+		return NULL;
 	}
 
 	if (pos > tlist->length)
 	{
-		ret -2;
-		return ret;
+		return NULL;
 	}
-	for(int i = pos; i < tlist->length; i++)
+	current = &(tlist->header);
+
+	for(int i = 0; i < pos && (current->next!=NULL); i++)
 	{
-		tlist->node[i] = tlist->node[i+1];
+		current = current->next;
 	}
+	ret = current->next;
+	current->next = ret->next; 
 	tlist->length--;
 	return ret;
 }
 
 typedef struct Teacher
 {
+	LinkListNode node;
 	int age;	
 	char name[64];
 }Teacher;
@@ -136,7 +129,7 @@ int main()
 	t2.age = 32;
 	t3.age = 33;
 
-	list = LinkList_Create(10);
+	list = LinkList_Create();
 	if (list == NULL)
 	{
 		return -1;
@@ -147,7 +140,7 @@ int main()
 	{
 		return ret;
 	}
-	ret = LinkList_Insert(list,(LinkListNode*) &t2,1);
+	ret = LinkList_Insert(list,(LinkListNode*) &t2,0);
 	if (ret != 0)
 	{
 		return ret;
@@ -173,6 +166,5 @@ int main()
 	{
 		LinkList_Delete(list,0);
 	}
-	
 	return 0;
 }
