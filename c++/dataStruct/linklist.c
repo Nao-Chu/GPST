@@ -92,7 +92,7 @@ LinkListNode* LinkList_Delete(LinkList* list,int pos)
 	LinkListNode* ret = NULL;
 	TLinkList* tlist = NULL;
 	tlist = (TLinkList*) list;
-	if (tlist == NULL)
+	if (tlist == NULL || tlist->length == 0)
 	{
 		return NULL;
 	}

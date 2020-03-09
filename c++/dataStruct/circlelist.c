@@ -103,7 +103,7 @@ CircleListNode* CircleList_Delete(CircleList* list,int pos)
 	CircleListNode* ret = NULL;
 	TCircleList* tlist = NULL;
 	tlist = (TCircleList*) list;
-	if (tlist == NULL || pos < 0 || tlist->length < 0)
+	if (tlist == NULL || pos < 0 || tlist->length <= 0)
 	{
 		return NULL;
 	}
@@ -187,6 +187,7 @@ int main()
 		return -1;
 	}
 
+	CircleList_Delete(list,0);
 	ret = CircleList_Insert(list,(CircleListNode*) &t1,1);
 	if (ret != 0)
 	{

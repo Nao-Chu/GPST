@@ -112,7 +112,7 @@ DLinkListNode* DLinkList_Delete(DLinkList* list,int pos)
 	DLinkListNode* ret = NULL;
 	TDLinkList* tlist = NULL;
 	tlist = (TDLinkList*) list;
-	if (tlist == NULL || pos < 0 || tlist->length < 0)
+	if (tlist == NULL || pos < 0 || tlist->length <= 0)
 	{
 		return NULL;
 	}
