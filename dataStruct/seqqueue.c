@@ -153,7 +153,7 @@ int main()
 	queue = SeqQueue_Create(10);
 	if (queue == NULL)
 	{
-		return;
+		return -1;
 	}
 
 	for (i = 0; i < 5; i++)

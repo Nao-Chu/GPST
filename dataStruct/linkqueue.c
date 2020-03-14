@@ -130,7 +130,7 @@ typedef void LinkQueue;
 typedef struct _tag_LinkQueueNode
 {
 	LinkQueue* node;
-	void* item;
+	LinkQueue* item;
 }LinkQueueNode;
 
 LinkQueue* LinkQueue_Create()
@@ -181,7 +181,7 @@ LinkQueue* LinkQueue_Header(LinkQueue* queue)
 LinkQueue* LinkQueue_Retrieve(LinkQueue* queue)
 {
 	LinkQueueNode *tmp = NULL;
-	LinkQueueNode *ret = NULL;
+	void* ret = NULL;
 	tmp = (LinkQueueNode *)LinkList_Delete(queue,0);
 	if (tmp == NULL)
 	{

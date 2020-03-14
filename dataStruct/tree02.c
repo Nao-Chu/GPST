@@ -6,6 +6,7 @@
 
 #include<stdlib.h> 
 #include<stdio.h>
+#include<string.h>
 
 // ¶þ²æÁ´±í 
 typedef struct BiTNode

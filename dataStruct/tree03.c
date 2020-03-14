@@ -6,6 +6,7 @@
 
 #include<stdlib.h> 
 #include<stdio.h>
+#include<string.h>
 
 // ¶þ²æÁ´±í 
 typedef struct BiTNode
@@ -32,7 +33,7 @@ BiTNode* CopyTree(BiTNode* T)
 	BiTNode *newRp = NULL;
 	if (T == NULL)
 	{
-		return;
+		return NULL;
 	}
 	
 	if (T->lchild)
