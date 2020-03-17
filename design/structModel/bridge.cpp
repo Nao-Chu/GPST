@@ -54,6 +54,23 @@ private:
 	Engine* m_install;
 };
 
+class Jeep : public car
+{
+public:
+	Jeep(Engine* engine)
+	{
+		m_install = engine;
+	}
+	virtual void carType()
+	{
+		cout << "Jeep" << endl;
+		m_install->InstallEngine();
+	}
+
+private:
+	Engine* m_install;
+};
+
 int main()
 {
 	e4400cc *a = new e4400cc; 
