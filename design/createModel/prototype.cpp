@@ -55,6 +55,7 @@ private:
 	int m_age;
 	char *m_resume;
 };
+
 int main()
 {
 	CPlusPlusProgrammer *c1 = new CPlusPlusProgrammer("zs",32);
