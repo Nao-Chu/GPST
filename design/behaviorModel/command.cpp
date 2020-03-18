@@ -87,6 +87,7 @@ int main()
 	Command *command1 = new CommandTreatNose(doctor);
 	Command *command2 = new CommandTreatEye(doctor);
 	BeautyNurse *beautynurse = new BeautyNurse();
+
 	beautynurse->setCommand(command1);
 	beautynurse->setCommand(command2);
 	beautynurse->setCommand(command1);
