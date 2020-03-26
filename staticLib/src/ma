@@ -1,0 +1,23 @@
+c = gcc
+prom = main.c
+target = target
+deps = $(shell find inc -name "*.h")
+src  = $(shell find src -name "*.c")
+obj  = $(src:%.c=%.o)
+myArgs = -Wall -g
+libName = libMyc.a
+
+ALL = $(main)
+$(target) : $(libName) 
+	$(c) $(libName) -o $(target) $(myArgs)
+
+$(libName) : $(obj)
+	ar rcs lib/$@ $^
+
+%.o : %.c $(deps)
+	$(c) -c $< -o $@ $(myArgs)
+
+#.PHONY: clean:
+clean:
+	-rm -rf $(obj) $(ALL) $(libName)
+
