@@ -7,7 +7,7 @@ obj  = $(src:%.c=%.o)
 myArgs = -Wall -g
 libName = lib/libMyc.a
 
-ALL = $(target)
+ALL:$(target)
 $(target) : $(libName) 
 	$(cpp) $(prom) $< -o $(target) $(myArgs)
 

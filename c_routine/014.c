@@ -3,7 +3,7 @@
 #include <string.h>
 
 typedef struct Teather{
-	char **name;
+	char *name;
 }teather;
 
 void scanf_name(teather *wan,int num);
@@ -14,7 +14,7 @@ void free_wan(teather *wan,int num);
 int main()
 {
 	int num = 3;
-	teather wan;
+	teather* wan;
 	wan = (teather*)malloc(num*sizeof(teather));
 	for (int i = 0; i < num; i++)
 		wan[i].name = (char*)malloc(10*sizeof(char));

@@ -3,7 +3,7 @@
 int NUM = 10;
 int main()
 {
-	int a[NUM] = {0};
+	int a[NUM] ;
 	printf("数组a的值：\n");
 	for (int i = 0; i < NUM; i++){
 		printf("a[%d] = %d\t",i,a[i]);

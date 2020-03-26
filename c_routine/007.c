@@ -13,7 +13,8 @@ enum
 int main()
 {
 	int time;
-	while (true){
+	while (1)
+	{
 		printf("请输入数字1-7: ");
 		scanf("%d",&time);
 		switch(time)
