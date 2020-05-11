@@ -18,5 +18,6 @@ $(libName) : $(obj)
 	$(cpp) -c $< -o $@ $(myArgs)
 
 clean:
-	-rm -rf $(obj) $(ALL) $(libName)
+	-rm -rf $(obj) $(libName)
 
+.PHONY: clean ALL

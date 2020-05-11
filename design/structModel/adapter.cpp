@@ -13,7 +13,7 @@ public:
 	virtual void useCurrent18v() = 0;
 };
 
-class Current220v : public Current18v
+class Current220v
 {
 public:
 	virtual void useCurrent18v()
@@ -41,7 +41,7 @@ private:
 int main()
 {
 	Current220v *current220v = new Current220v;
-	Adapter *adapter = new Adapter(current220v);
+	Current18v *adapter = new Adapter(current220v);
 	adapter->useCurrent18v();
 	return 0;
 }

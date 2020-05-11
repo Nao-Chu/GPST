@@ -41,5 +41,6 @@ int main()
 {
 	Subject *subject = new dangdangProxy;
 	subject->sailbook();
+	subject->dazhe();
 	return 0;
 }

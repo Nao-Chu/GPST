@@ -98,6 +98,7 @@ int main()
 	RunCar *runcar = new RunCar(mycar);
 	FlyCar *flycar = new FlyCar(runcar);
 	SwimCar *swimcar = new SwimCar(flycar);
+	swimcar->show();
 	CarCar *carcar = new CarCar(swimcar);
 	carcar->show();
 	return 0;
