@@ -17,7 +17,8 @@ int main(int argc, char* argv[])
 	exit(1);
     }
 
-    int lenth = lseek(fd,111,SEEK_END);
+    int lenth;
+    lenth = lseek(fd,111,SEEK_END);
     printf("file size:%d \n",lenth);
 
     write(fd,"a",1);
