@@ -66,6 +66,16 @@
   5. 把本地库的所有内容推送到远程库上：git push -u origin master (第一次加-u)
   ```
 
+* 版本
+ 
+ ```
+ git reset/revert [--soft | --mixed | --hard]
+ 1. --mixed：保留源码，只是将commit和index回退到某个版本
+ 2. --soft: 保留源码，只是将commit回退到某个版本，不设计index回退
+ 3. --hard：源码，commit，index都回退
+ 4. reset：直接回退到指定版本，就像穿越过去一样（减少指定版本前面的commit）
+ 5. revert：新增一个commit，这个commit的版本是你想回退的那个（多了一条）
+ ```
 ---
 
 #### 总结
@@ -85,8 +95,9 @@
 
   ```
   1. 进入.ssh
-  2. 打开文件 id_rsa.pub
-  3. 里面有秘钥，填入Github上,注意格式 
+  2. 生成id_rsa.pub文件：ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  3. 打开文件 id_rsa.pub
+  4. 里面有秘钥，填入Github上,注意格式 
   ```
 
 * 推送标签
@@ -98,4 +109,11 @@
   ```
 
   
+ * 回退版本
+ 
+  ```
+  1. 如果你想要删除误提交的commit，用git reset，反之git revert。
+  2. 已经push：git push -f origin 分支
+      此操作强制让库代码回退到你当前版本，请确保commit版本正确，可能造成代码丢失
+  ```
 
