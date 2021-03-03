@@ -107,13 +107,12 @@
   2.推送全部未推送过的本地标签：git push origin --tags
   3.删除一个远程标签：git push origin：refs/tags/tagname
   ```
-
   
  * 回退版本
- 
-  ```
-  1. 如果你想要删除误提交的commit，用git reset，反之git revert。
-  2. 已经push：git push -f origin 分支
+
+    ```
+    1. 如果你想要删除误提交的commit，用git reset，反之git revert。
+    2. 已经push：git push -f origin 分支
       此操作强制让库代码回退到你当前版本，请确保commit版本正确，可能造成代码丢失
-  ```
+    ```
 
