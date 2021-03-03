@@ -68,14 +68,14 @@
 
 * 版本
  
- ```
- git reset/revert [--soft | --mixed | --hard]
- 1. --mixed：保留源码，只是将commit和index回退到某个版本
- 2. --soft: 保留源码，只是将commit回退到某个版本，不设计index回退
- 3. --hard：源码，commit，index都回退
- 4. reset：直接回退到指定版本，就像穿越过去一样（减少指定版本前面的commit）
- 5. revert：新增一个commit，这个commit的版本是你想回退的那个（多了一条）
- ```
+  ```
+  git reset/revert [--soft | --mixed | --hard]
+  1. --mixed：保留源码，只是将commit和index回退到某个版本
+  2. --soft: 保留源码，只是将commit回退到某个版本，不设计index回退
+  3. --hard：源码，commit，index都回退
+  4. reset：直接回退到指定版本，就像穿越过去一样（减少指定版本前面的commit）
+  5. revert：新增一个commit，这个commit的版本是你想回退的那个（多了一条）
+  ```
 ---
 
 #### 总结
