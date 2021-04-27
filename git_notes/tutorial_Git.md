@@ -77,14 +77,15 @@
   5. revert：新增一个commit，这个commit的版本是你想回退的那个（多了一条）
   ```
  
- * fork 同步
- ```
- 1. 查看远程信息： git remote -v 
- 2. 增加远程库：git remote add upstream git@github.com:xxx/xxx.git 
- 3. 删除远程库：git remote remove upstream
- 4. 更新同步代码：git fetch upstream
- 5. 合并到本地：git merge upstream/master
- ```
+* fork 同步
+ 
+  ```
+  1. 查看远程信息： git remote -v 
+  2. 增加远程库：git remote add upstream git@github.com:xxx/xxx.git 
+  3. 删除远程库：git remote remove upstream
+  4. 更新同步代码：git fetch upstream
+  5. 合并到本地：git merge upstream/master
+  ```
 ---
 
 #### 总结
