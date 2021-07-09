@@ -15,8 +15,8 @@ int main()
     n = read(STDIN_FILENO,buf,10); // define STDIN_FILENO STDOUT_FILENO STDERR_FILENO
 
     if (n < 0){
-	perror("read STDIN_FILENO");
-	exit(1);
+		perror("read STDIN_FILENO");
+		exit(1);
     }
     write(STDOUT_FILENO,buf,n);
 

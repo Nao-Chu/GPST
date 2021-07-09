@@ -39,8 +39,8 @@ int main(int argc,char *argv[])
 
     ret = unlink("temp.txt");
     if(ret < 0){
-	perror("unlink error");
-	exit(1);
+		perror("unlink error");
+		exit(1);
     }
 
     return 0;

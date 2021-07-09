@@ -15,15 +15,21 @@ int main(int argc,char *argv[])
     DIR * dp;
     dp = opendir(argv[1]);
     if (dp == NULL){
-	perror("opendir error");
-	exit(1);
+		perror("opendir error");
+		exit(1);
     }
 
     struct dirent *sdp;
+	/*
+	 * struct dirent{
+	 *		inode;
+	 *		dname;
+	 * }
+	 * */
     while((sdp = readdir(dp)) != NULL){
-	if(strcmp(sdp->d_name,".") == 0)
-	    continue;
-	printf("%s\n",sdp->d_name);
+		if(strcmp(sdp->d_name,".") == 0)
+			continue;
+		printf("%s\n",sdp->d_name);
     }
 
     closedir(dp);

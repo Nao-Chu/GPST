@@ -13,8 +13,8 @@ int main(int argc, char* argv[])
 {
     int fd = open(argv[1],O_RDWR);
     if (fd == -1){
-	perror("open error");
-	exit(1);
+		perror("open error");
+		exit(1);
     }
 
     int lenth;

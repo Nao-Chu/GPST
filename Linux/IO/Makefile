@@ -6,7 +6,6 @@ target = $(patsubst %.c,%,$(src))
 myArgs = -Wall -g -std=c11
 ALL:$(target)
 
-
 %:%.c 
 	$(cpp) $< -o $@ $(myArgs)
 

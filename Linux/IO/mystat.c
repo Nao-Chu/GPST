@@ -16,13 +16,14 @@ int main(int argc,char *argv[])
 {
     struct stat sb;
 
-    //int ret = stat(argv[1],&sb);
-    int ret = lstat(argv[1],&sb);
+    int ret = stat(argv[1],&sb);
+    //int ret = lstat(argv[1],&sb);
     if(ret == -1){
-	perror("stat eror");
-	exit(1);
+		perror("stat eror");
+		exit(1);
     }
 
+	printf("file size is:%ld\n",sb.st_size);
     if (S_ISREG(sb.st_mode)){
 	printf("It's a regular\n");
     } else if (S_ISDIR(sb.st_mode)){
