@@ -33,8 +33,8 @@ int main()
 		n = read(STDIN_FILENO,buf,10);
 		if (n < 0){
 			if (errno != EAGAIN){
-			perror("read /dev/tty");
-			exit(1);
+				perror("read /dev/tty");
+				exit(1);
 			}
 			sleep(3);
 			write(STDOUT_FILENO,"try again\n",strlen("try again\n"));

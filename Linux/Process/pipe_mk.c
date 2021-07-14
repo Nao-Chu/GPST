@@ -9,20 +9,20 @@
 #include<unistd.h>
 #include<stdlib.h>
 #include<string.h>
+#include<sys/stat.h>
+
+void sys_err(const char* str)
+{
+	perror(str);
+	exit(1);
+}
 
 int main(int argc,char *argv[])
 {
-    pid_t pid = fork();
-    if (pid == -1){
-		perror("fork error");
-		exit(1);
-    } else if(pid == 0){
-		//execlp("ls","ls","-l","-d","-h",NULL);
-		execl("./fork","./fork",NULL);
-    } else if (pid > 0){
-		printf("I'm parent,pid:%d\n",getpid());
-    }
-    sleep(1);
-
+	int ret = mkfifo("testfifo",0664);
+	if(ret == -1){
+		sys_err("pipe error");
+	}
+	
     return 0;
 }

@@ -13,30 +13,21 @@
 
 int main(int argc,char *argv[])
 {
-    pid_t pid,wpid;
-    int status;
+    pid_t pid;
     pid = fork();
     if(pid == 0){
-	printf("child\n");
-	sleep(10);
-	printf("child die\n");
-	return 73;
+		printf("child\n");
+		sleep(10);
+		printf("child die\n");
     }else if (pid > 0){
-	wpid = wait(&status);
-	if(wpid == -1){
-	    perror("wait error\n");
-	    exit(1);
-	}
-	if (WIFEXITED(status)){
-	    printf("child exit with %d\n",WEXITSTATUS(status));
-	}
-	if (WIFSIGNALED(status)){
-	    printf("child exit with %d\n",WTERMSIG(status));
-	}
-	printf("parent finsh\n");
+		while(1){
+			printf("I am parent\n");
+			sleep(1);
+		}
+		printf("parent finsh\n");
     }else{
-	perror("fork");
-	return 1;
+		perror("fork");
+		return 1;
     }
     return 0;
 }

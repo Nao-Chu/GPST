@@ -20,12 +20,12 @@ int main(int argc,char *argv[])
 
     pid_t pid = fork();
     if (pid == -1){
-	perror("fork error");
-	exit(1);
+		perror("fork error");
+		exit(1);
     } else if (pid == 0){
-	printf("I'm child; my pid is %d,my parent pid is %d\n ",getpid(),getppid());
+		printf("I'm child; my pid is %d,my parent pid is %d\n ",getpid(),getppid());
     } else if (pid > 0){
-	printf("I'm parent;my child pid is %d, my pid:%d,my parend pid:%d\n",pid,getpid(),getppid());
+		printf("I'm parent;my child pid is %d, my pid:%d,my parend pid:%d\n",pid,getpid(),getppid());
     }
 
     printf("-----------end----------\n");

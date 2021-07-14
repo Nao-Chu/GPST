@@ -9,6 +9,7 @@
 #include<unistd.h>
 #include<stdlib.h>
 #include<string.h>
+#include<sys/wait.h>
 
 int main(int argc,char *argv[])
 {
@@ -19,9 +20,20 @@ int main(int argc,char *argv[])
 		}
     }
     if (i == 5){
-		sleep(1);
-		printf("I'm parent\n");
+		//sleep(5);
+		// WNOHANG 非阻塞 0 阻塞
+		pid_t pid;
+		while((pid = waitpid(-1,NULL,WNOHANG)) != -1){
+			if(pid > 0){
+				printf("wait child %d\n",pid);
+			} else if (pid == 0){
+				sleep(1);
+				printf("wait pid == 0,continue\n");
+				continue;
+			}
+		}
     } else{
+		sleep(i);
 		printf("my child pid = %d,i = %d\n",getpid(),i + 1);
     }
     printf("pid:%d end\n",getpid());

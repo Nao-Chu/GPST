@@ -10,17 +10,22 @@
 #include<stdlib.h>
 #include<string.h>
 
+int var = 100;
+
 int main(int argc,char *argv[])
 {
     pid_t pid = fork();
     if (pid == -1){
 		perror("fork error");
 		exit(1);
-    } else if(pid == 0){
-		//execlp("ls","ls","-l","-d","-h",NULL);
-		execl("./fork","./fork",NULL);
-    } else if (pid > 0){
-		printf("I'm parent,pid:%d\n",getpid());
+    } else if(pid > 0){
+		var = 288;
+		printf("parent, var = %d\n", var);
+		printf("I'm parent,pid:%d, getppid = %d\n",getpid(),getppid());
+    } else if (pid == 0){
+		var = 200;
+		printf("I'am child, var = %d\n", var);
+		printf("pid:%d, getppid = %d\n",getpid(),getppid());
     }
     sleep(1);
 

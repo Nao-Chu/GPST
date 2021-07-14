@@ -12,17 +12,11 @@
 
 int main(int argc,char *argv[])
 {
-    pid_t pid = fork();
-    if (pid == -1){
-		perror("fork error");
-		exit(1);
-    } else if(pid == 0){
-		//execlp("ls","ls","-l","-d","-h",NULL);
-		execl("./fork","./fork",NULL);
-    } else if (pid > 0){
-		printf("I'm parent,pid:%d\n",getpid());
-    }
-    sleep(1);
+	int fd1 = open(argv[1],O_RDWR);
+	dup2(fd1,STDOUT_FILENO);
+
+	execlp("ps","ps","aux",NULL);
+	perror("execpl, error");
 
     return 0;
 }
