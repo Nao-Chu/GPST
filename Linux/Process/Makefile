@@ -3,7 +3,8 @@ cpp = gcc
 src = $(wildcard *.c)
 target = $(patsubst %.c,%,$(src))
 
-myArgs = -Wall -g -std=c11
+myArgs = -Wall -g -std=c11 -D_GNU_SOURCE
+
 ALL:$(target)
 
 
